@@ -1,0 +1,1146 @@
+
+CREATE TABLE R_Employee
+(
+Employee_ID   Varchar(10) Primary key NOT NULL,
+  Employee_Name   Varchar(20) NOT NULL,
+  Designation   Varchar(20) NOT NULL,
+ department Varchar(20),
+ join_date Date,
+  SSN   Int NOT NULL,
+  Employee_Type   Varchar(20) NOT NULL,
+  Salary   Varchar(20) NOT NULL,
+  Payment_ID   Varchar(10) NOT NULL
+);
+select * from user_constraints;
+ desc R_Employee;
+insert into R_Employee values('E100','SWAPNIL','Marketer','Marketing','2/dec/2016',501965640,'FULL TIME',30000,'P10');
+insert into R_Employee values('E101','VICKY','Financial Advisor','Finance','21/oct/2016',178408516,'FULL TIME',20000,'P11');
+insert into R_Employee values('E102','SAYALI','Business Analyst','Finance','18/aug/2016',697367249,'FULL TIME',15000,'P12');
+insert into R_Employee values('E103','PRATIKSHA','Accountant','Finance','18/jan/2016',282314775,'FULL TIME',10000,'P13');
+insert into R_Employee values('E104','PRANALI','PC Assistants','Billing','3/oct/2016',210794068,'FULL TIME',5000,'P14');
+insert into R_Employee values('E105','SONALI','PC Assistants','Billing','25/nov/2016',448101338,'FULL TIME',10000,'P15');
+insert into R_Employee values('E106','BHUSHAN','PC Assistants','Billing','11/may/2016',162274487,'FULL TIME',12000,'P16');
+insert into R_Employee values('E107','AKSHAY','PC Assistants','Billing','21/nov/2016',583021048,'FULL TIME',13000,'P17');
+insert into R_Employee values('E108','SAURABH','PC Assistants','Billing','05/apr/2016',373888988,'FULL TIME',14000,'P18');
+insert into R_Employee values('E109','PRIYA','PC Assistants','Billing','26/june/2016',432253711,'FULL TIME',15000,'P19');
+insert into R_Employee values('E110','AKASH','PC Assistants','Billing','14/may/2016',368292987,'FULL TIME',18000,'P20');
+insert into R_Employee values('E111','PIYUSH','PC Assistants','Billing','26/feb/2016',759909891,'FULL TIME',19000,'P21');
+insert into R_Employee values('E112','PRIYANKA','PC Assistants','Billing','29/nov/2016',355492520,'FULL TIME',22000,'P22');
+insert into R_Employee values('E113','AJAY','PC Assistants','Billing','19/aug/2016',420485178,'FULL TIME',17000,'P23');
+insert into R_Employee values('E114','VIJAY','PC Assistants','Billing','01/aug/2016',388145184,'PART TIME',14000,'P24');
+insert into R_Employee values('E115','SANKALP','PC Assistants','Billing','18/nov/2016',273173687,'PART TIME',10000,'P25');
+insert into R_Employee values('E116','SUKRUT','PC Assistants','Billing','04/oct/2016',435797043,'PART TIME',10000,'P26');
+insert into R_Employee values('E117','VINAYAK','PC Assistants','Billing','22/apr/2016',205203530,'PART TIME',11000,'P27');
+insert into R_Employee values('E118','PRANIT','PC Assistants','Billing','30/jan/2016',758165151,'PART TIME',12000,'P28');
+insert into R_Employee values('E119','YOGESH','PC Assistants','Billing','07/jan/2016',318277304,'PART TIME',14000,'P29');
+insert into R_Employee values('E120','POOJA','PC Assistants','Billing','04/dec/2016',916118821,'PART TIME',18000,'P30');
+insert into R_Employee values('E121','PRAJAKTA','PC Assistants','Billing','16/sep/2016',507645475,'PART TIME',19000,'P31');
+insert into R_Employee values('E122','RAVI','Sales Advisor','Sales','27/apr/2016',482702342,'FULL TIME',12000,'P32');
+insert into R_Employee values('E123','SWARALI','Sales Advisor','Sales','19/sep/2016',916799612,'FULL TIME',13000,'P33');
+insert into R_Employee values('E124','VASUDEV','Sales Advisor','Sales','03/jul/2016',552599525,'PART TIME',14000,'P34');
+insert into R_Employee values('E125','SANDEEP','Sales Advisor','Sales','26/jul/2016',132527849,'PART TIME',15000,'P35');
+insert into R_Employee values('E126','EKNATH','Sales Person','Sales','12/jun/2016',406234803,'PART TIME',12000,'P36');
+insert into R_Employee values('E127','SOMNATH','Sales Person','Sales','05/feb/2016',500963559,'PART TIME',10000,'P37');
+ 
+ select * from R_Employee;
+
+CREATE INDEX    IX_Relationship8    ON    R_Employee (Payment_ID);
+CREATE INDEX IX_Relationship30 ON R_Employee(ssn);
+
+CREATE TABLE R_Orders
+(
+Order_ID  Varchar(10) Primary key NOT NULL,
+Order_Date  Date NOT NULL,
+Status  Varchar(20),
+Shippent_Duration  Varchar(20) NOT NULL,
+Payment_ID  Varchar(10) NOT NULL
+);
+
+
+ALTER TABLE  R_Orders  ADD CONSTRAINT  O_PD  FOREIGN KEY ( Payment_ID ) REFERENCES  R_Payment  ( Payment_ID );
+delete from R_Orders;
+desc R_Orders;
+insert into R_Orders values(0100,'22/mar/2016','In Progress','Immediate','P10');
+insert into R_Orders values(0101,'15/nov/2016','In Progress','Immediate','P11');
+insert into R_Orders values(0102,'23/aug/2016','In Progress','Immediate','P12');
+insert into R_Orders values(0103,'18/feb/2016','In Progress','Immediate','P13');
+insert into R_Orders values(0104,'09/oct/2016','In Progress','Immediate','P14');
+insert into R_Orders values(0105,'24/may/2016','In Progress','Immediate','P15');
+insert into R_Orders values(0106,'04/mar/2016','In Progress','Immediate','P16');
+insert into R_Orders values(0107,'07/oct/2016','In Progress','Immediate','P17');
+insert into R_Orders values(0108,'11/aug/2016','In Progress','Immediate','P18');
+insert into R_Orders values(0109,'21/jul/2016','In Progress','Immediate','P19');
+insert into R_Orders values(0110,'27/oct/2016','In Progress','Immediate','P20');
+insert into R_Orders values(0111,'05/jun/2016','In Progress','Immediate','P21');
+insert into R_Orders values(0112,'21/apr/2016','In Progress','Immediate','P22');
+insert into R_Orders values(0113,'20/aug/2016','In Progress','Immediate','P23');
+insert into R_Orders values(0114,'14/apr/2016','In Progress','Immediate','P24');
+insert into R_Orders values(0115,'04/feb/2016','In Progress','Immediate','P25');
+insert into R_Orders values(0116,'31/oct/2016','In Progress','Immediate','P26');
+insert into R_Orders values(0117,'07/apr/2016','In Progress','Immediate','P27');
+insert into R_Orders values(0118,'19/apr/2016','In Progress','Immediate','P28');
+insert into R_Orders values(0119,'05/jan/2016','In Progress','With in 4 Days','P29');
+insert into R_Orders values(0120,'25/aug/2016','In Progress','With in 4 Days','P30');
+insert into R_Orders values(0121,'17/jan/2016','In Progress','With in 4 Days','P31');
+insert into R_Orders values(0122,'19/jul/2016','In Progress','With in 4 Days','P32');
+insert into R_Orders values(0123,'21/may/2016','In Progress','With in 4 Days','P33');
+insert into R_Orders values(0124,'03/apr/2016','In Progress','With in 4 Days','P34');
+insert into R_Orders values(0125,'11/jun/2016','In Progress','With in 4 Days','P35');
+insert into R_Orders values(0126,'06/jan/2016','In Progress','With in 4 Days','P36');
+insert into R_Orders values(0127,'18/may/2016','Shipped','With in 4 Days','P11');
+insert into R_Orders values(0128,'14/jul/2016','Shipped','With in 4 Days','P12');
+insert into R_Orders values(0129,'25/aug/2016','Shipped','With in 4 Days','P13');
+insert into R_Orders values(0130,'13/aug/2016','Shipped','With in 4 Days','P14');
+insert into R_Orders values(0131,'26/dec/2016','Shipped','With in 4 Days','P15');
+insert into R_Orders values(0132,'19/feb/2016','Shipped','With in 4 Days','P16');
+insert into R_Orders values(0133,'20/jan/2016','Shipped','With in 4 Days','P17');
+insert into R_Orders values(0134,'30/jun/2016','Shipped','With in 4 Days','P18');
+insert into R_Orders values(0135,'02/dec/2016','Shipped','With in 4 Days','P19');
+insert into R_Orders values(0136,'17/oct/2016','Shipped','With in 4 Days','P20');
+insert into R_Orders values(0137,'18/jul/2016','Partially Shipped','With in 4 Days','P21');
+insert into R_Orders values(0138,'12/aug/2016','Partially Shipped','With in 4 Days','P22');
+insert into R_Orders values(0139,'06/nov/2016','Partially Shipped','With in 4 Days','P23');
+insert into R_Orders values(0140,'12/oct/2016','Partially Shipped','With in 4 Days','P24');
+
+/*insert into R_Orders values(0141,'10/jul/2016','Shipped','With in 4 Days','P51');
+insert into R_Orders values(0142,'08/sep/2016','Shipped','With in 4 Days','P52');
+insert into R_Orders values(0143,'22/oct/2016','Shipped','With in 4 Days','P53');
+insert into R_Orders values(0144,'05/feb/2016','Shipped','With in 4 Days','P54');
+insert into R_Orders values(0145,'23/dec/2016','Shipped','With in 4 Days','P55');
+insert into R_Orders values(0146,'19/aug/2016','Shipped','With in 4 Days','P56');
+insert into R_Orders values(0147,'17/dec/2016','Shipped','With in 4 Days','P57');
+insert into R_Orders values(0148,'05/nov/2016','Shipped','With in 4 Days','P58');
+insert into R_Orders values(0149,'27/jun/2016','Shipped','With in 4 Days','P59');
+insert into R_Orders values(0150,'27/jun/2016','Shipped','With in 4 Days','P60');
+insert into R_Orders values(0151,'14/apr/2016','Shipped','With in 4 Days','P61');
+insert into R_Orders values(0152,'21/aug/2016','Shipped','With in 4 Days','P62');
+insert into R_Orders values(0153,'14/jun/2016','Shipped','With in 4 Days','P63');
+insert into R_Orders values(0154,'28/jan/2016','Shipped','With in 4 Days','P64');
+insert into R_Orders values(0155,'06/aug/2016','Shipped','With in 4 Days','P65');
+insert into R_Orders values(0156,'18/jan/2016','Shipped','With in 4 Days','P66');
+insert into R_Orders values(0157,'24/jun/2016','Shipped','With in 4 Days','P67');
+insert into R_Orders values(0158,'14/may/2016','Shipped','With in 1 Week','P68');
+insert into R_Orders values(0159,'12/sep/2016','Shipped','With in 1 Week','P69');
+insert into R_Orders values(0160,'18/mar/2016','Shipped','With in 1 Week','P70');
+insert into R_Orders values(0161,'19/mar/2016','Shipped','With in 1 Week','P71');
+insert into R_Orders values(0162,'26/dec/2016','Shipped','With in 1 Week','P72');
+insert into R_Orders values(0163,'27/sep/2016','Shipped','With in 1 Week','P73');
+insert into R_Orders values(0164,'12/nov/2016','Shipped','With in 1 Week','P74');
+insert into R_Orders values(0165,'21/jul/2016','Shipped','With in 1 Week','P75');
+insert into R_Orders values(0166,'12/sep/2016','Shipped','With in 1 Week','P76');
+insert into R_Orders values(0167,'03/oct/2016','Shipped','With in 1 Week','P77');
+insert into R_Orders values(0168,'19/jul/2016','Shipped','With in 1 Week','P78');
+insert into R_Orders values(0169,'08/sep/2016','Shipped','With in 1 Week','P79');
+insert into R_Orders values(0170,'08/jun/2016','Shipped','With in 1 Week','P80');
+insert into R_Orders values(0171,'06/aug/2016','Shipped','With in 1 Week','P81');
+insert into R_Orders values(0172,'06/mar/2016','Shipped','With in 1 Week','P82');
+insert into R_Orders values(0173,'29/apr/2016','Partially Shipped','With in 1 Week','P83');
+insert into R_Orders values(0174,'17/apr/2016','Partially Shipped','With in 1 Week','P84');
+insert into R_Orders values(0175,'27/jul/2016','Partially Shipped','With in 1 Week','P85');
+insert into R_Orders values(0176,'07/jul/2016','Partially Shipped','With in 1 Week','P86');
+insert into R_Orders values(0177,'09/aug/2016','Partially Shipped','With in 1 Week','P87');
+insert into R_Orders values(0178,'05/apr/2016','Partially Shipped','With in 1 Week','P88');
+insert into R_Orders values(0179,'20/jan/2016','Partially Shipped','With in 1 Week','P89');
+insert into R_Orders values(0180,'20/jul/2016','Partially Shipped','With in 1 Week','P90');
+insert into R_Orders values(0181,'08/mar/2016','Partially Shipped','With in 1 Week','P91');
+insert into R_Orders values(0182,'25/jul/2016','Partially Shipped','With in 1 Week','P92');
+insert into R_Orders values(0183,'23/apr/2016','Partially Shipped','With in 1 Week','P93');
+insert into R_Orders values(0184,'27/nov/2016','Partially Shipped','With in 1 Week','P94');
+insert into R_Orders values(0185,'17/dec/2016','Partially Shipped','With in 1 Week','P95');
+insert into R_Orders values(0186,'24/jan/2016','Partially Shipped','With in 1 Week','P96');
+insert into R_Orders values(0187,'03/apr/2016','Partially Shipped','With in 1 Week','P97');*/
+
+select * from R_Orders;
+
+CREATE INDEX IX_Relationship15 ON R_Orders (Payment_ID);
+
+CREATE TABLE  R_Customer 
+(
+Customer_ID  Varchar(10) Primary key NOT NULL,
+First_Name  Varchar(20) NOT NULL,
+Last_Name  Varchar(20) NOT NULL,
+Phone_Number  Int NOT NULL,
+Email_Address  Varchar(20) NOT NULL,
+Customer_Type  Varchar(20) NOT NULL
+);
+
+insert into R_Customer values(10000,'kamala','Nayana',8576465699,'nayana11@gmail.com','Student');
+insert into R_Customer values(10001,'Nidhi','Mittal',8123457024,'mittal11@gmail.com','Student');
+insert into R_Customer values(10002,'Chandrika','Bolla',8123451709,'bolla11@gmail.com','Student');
+insert into R_Customer values(10003,'Gayathri','Maganti',8123546789,'maganti11@gmail.com','Student');
+insert into R_Customer values(10004,'Hithaishi','Avula',8987654321,'avula11@gmail.com','Student');
+insert into R_Customer values(10005,'Lahari','Palle',8120989767,'palle1@gmail.com','Student');
+insert into R_Customer values(10006,'Dheemanth','Uppalapati',8124366666,'dhee11@gmail.com','Student');
+insert into R_Customer values(10007,'Radha','Uppalapti',8127777777,'ra11@gmail.com','Student');
+insert into R_Customer values(10008,'Radha','Vallabhaneni',8177777772,'radha11@gmail.com','Student');
+insert into R_Customer values(10009,'Swarupa','kanaka',8777777712,'swapu11@gmail.com','Student');
+insert into R_Customer values(10010,'Anshika','Nunna',8101010102,'anshi11@gmail.com','Student');
+insert into R_Customer values(10011,'Avi','Pullela',8182818212,'avi11@gmail.com','Student');
+insert into R_Customer values(10012,'Keerthi','Kanakamedala',8272727212,'keer11@gmail.com','Student');
+insert into R_Customer values(10013,'Suresh','Kakarala',8292929212,'suri11@gmail.com','Student');
+insert into R_Customer values(10014,'Samba','Uppalapati',8129020932,'samba11@gmail.com','Student');
+insert into R_Customer values(10015,'Shruti','Ganji',8129302032,'ganj11@gmail.com','Student');
+insert into R_Customer values(10016,'Rahul','Samana',8116263742,'sam11@gmail.com','Student');
+insert into R_Customer values(10017,'Sindhu','Bhargavi',8199988892,'sindh11@gmail.com','Student');
+insert into R_Customer values(10018,'Harshith','Sahas',8190909092,'harsh11@gmail.com','Student');
+insert into R_Customer values(10019,'Sravya','Bobba',8909090912,'srav11@gmail.com','Student');
+insert into R_Customer values(10020,'Spoorthy','Kanamedala',8178787872,'spoo11@gmail.com','Student');
+insert into R_Customer values(20000,'Sita','Sree',8576460899,'Sree11@gmail.com','Employee');
+insert into R_Customer values(20001,'Nidhi','Mittal',8123456789,'nm11@gmail.com','Employee');
+insert into R_Customer values(20002,'Sandra','Meyer',8178780872,'sandra00@gmail.com','Employee');
+insert into R_Customer values(20003,'Laura','Meyer',8178780872,'laura00@gmail.com','Employee');
+insert into R_Customer values(20004,'Milly','George',8178780872,'milly00@gmail.com','Employee');
+insert into R_Customer values(20005,'Anna','Miller',8178780872,'anna00@gmail.com','Employee');
+insert into R_Customer values(20006,'Andy','Miller',8178780872,'andy00@gmail.com','Employee');
+insert into R_Customer values(20007,'Sandra','Bullock',8178780872,'sandy00@gmail.com','Employee');
+insert into R_Customer values(20008,'Stephne','Miller',8178780872,'stephy00@gmail.com','Employee');
+insert into R_Customer values(20009,'Lilly','Miller',8178780872,'lilly00@gmail.com','Employee');
+insert into R_Customer values(20010,'Roger','Mike',8178780872,'roger00@gmail.com','Employee');
+insert into R_Customer values(20011,'Andy','Blake',8178780872,'blandy00@gmail.com','Employee');
+insert into R_Customer values(30000,'John','Smith',8576400649,'John11@gmail.com','Business');
+insert into R_Customer values(30001,'Franklin','Roosevelt',987654321,'roosevelt@gmail.com','Business');
+insert into R_Customer values(30002,'Harry','Truman',987654312,'harry123@gmail.com','Business');
+insert into R_Customer values(30003,'Dwight','Eisenhower',987654313,'Dwight@yahoo.com','Business');
+insert into R_Customer values(30004,'John','Kennedy',987654314,'Kennedy@yahoo.com','Business');
+insert into R_Customer values(30005,'Lyndon','Johnson',987654315,'Lyndon17@gmail.com','Business');
+insert into R_Customer values(30006,'Richard','Nixon',987654361,'nixon13@yahoo.com','Business');
+insert into R_Customer values(30007,'Jimmy','Carter',987654317,'carter12@yahoo.com','Business');
+insert into R_Customer values(30008,'George','Bush',987654318,'george@gmail.com','Business');
+
+
+CREATE TABLE  R_Zipcode 
+(
+State  Varchar(20) NOT NULL,
+Zipcode_ID  Varchar(10) Primary key NOT NULL,
+City  Varchar(20) NOT NULL
+);
+select * from R_Zipcode;
+
+
+insert into  R_ZipCode values('Florida', 11000, 'Miami');
+insert into  R_ZipCode  values('Florida', 11001, 'Orlando');
+insert into  R_ZipCode  values('Florida', 11002, 'Tampa');
+insert into  R_ZipCode  values('Florida', 11003, 'Fort');
+insert into  R_ZipCode  values('Florida', 11004, 'Jacksonville');
+insert into  R_ZipCode values('Florida', 11005, 'Key West');
+insert into  R_ZipCode  values('Florida', 11006, 'West Palm');
+insert into  R_ZipCode  values('Florida', 11007, 'Naples');
+insert into  R_ZipCode  values('Florida', 11008, 'St.Peterbrough');
+insert into  R_ZipCode  values('Florida', 11009, 'Daytona');
+insert into  R_ZipCode  values('Alaska', 22000, 'Anchorage');
+insert into  R_ZipCode  values('Alaska', 22001, 'Juneau');
+insert into  R_ZipCode  values('Alaska', 22002, 'Fair Banks');
+insert into  R_ZipCode  values('Alaska', 22003, 'Ketchikan');
+insert into  R_ZipCode  values('Alaska', 22004, 'Wasilla');
+insert into  R_ZipCode  values('Alaska', 22005, 'Sitka');
+insert into  R_ZipCode  values('Alaska', 22006, 'Kodiak');
+insert into  R_ZipCode  values('Massachusetts', 33000, 'Boston');
+insert into  R_ZipCode  values('Massachusetts', 33001, 'Framingham');
+insert into  R_ZipCode  values('Massachusetts', 33002, 'Somerville');
+insert into  R_ZipCode  values('Massachusetts', 33003, 'Playmouth');
+insert into  R_ZipCode  values('Massachusetts', 33004, 'Lowll');
+insert into  R_ZipCode  values('Massachusetts', 33005, 'Newton');
+insert into  R_ZipCode  values('Massachusetts', 33006, 'Quincy');
+insert into  R_ZipCode  values('California',44000,'Los Angeles');
+insert into  R_ZipCode  values('California',44001,'Sanfrancisco');
+insert into  R_ZipCode  values('California',44002,'Sandiego');
+insert into  R_ZipCode  values('California',44003,'San Jose');
+insert into  R_ZipCode  values('Kansas',55000,'Kansas City');
+insert into  R_ZipCode  values('Kansas',55001,'Topeka');
+insert into  R_ZipCode  values('Kansas',55002,'Wichida');
+insert into  R_ZipCode  values('Kansas',55003,'Over land');
+
+
+CREATE TABLE  R_Product 
+(
+   Product_ID  Varchar(10) Primary key NOT NULL,
+   Product_Name  Varchar(20) NOT NULL,
+   Available_Number  Int,
+   Group_ID  Varchar(10) NOT NULL,
+   Supplier_ID 	 Varchar(10) NOT NULL,
+   Review_ID  Varchar(10)
+);
+drop table R_Product;
+
+select * from R_Product;
+
+ALTER TABLE   R_Product   ADD CONSTRAINT P_GD FOREIGN KEY (  Group_ID  ) REFERENCES   R_ProductGroup    (  Group_ID  );
+ALTER TABLE R_Product ADD CONSTRAINT  P_SD  FOREIGN KEY ( Supplier_ID ) REFERENCES  R_Supplier  ( Supplier_ID );
+ALTER TABLE  R_Product  ADD CONSTRAINT  P_RD  FOREIGN KEY ( Review_ID ) REFERENCES  R_Reviews  ( Review_ID );
+
+
+insert into R_Product values('PR101','Lenevo Flex',25,100,'S001','RE01');
+insert into R_Product values('PR102','Lenevo Yoga',25,100,'S002','RE02');
+insert into R_Product values('PR103','Lenevo Think Pad',25,100,'S003','RE03');
+insert into R_Product values('PR104','Mac Book Pro',27,100,'S004','RE04');
+insert into R_Product values('PR105','Mac Mini',29,100,'S005','RE05');
+insert into R_Product values('PR106','Mac Air',31,100,'S006','RE06');
+insert into R_Product values('PR107','Mac Book',33,100,'S007','RE07');
+insert into R_Product values('PR108','Mac Desktops',35,100,'S008','RE08');
+insert into R_Product values('PR109','Hewlett Mini',37,100,'S009','RE09');
+insert into R_Product values('PR110','Hewlett Desktop',39,100,'S001','RE10');
+insert into R_Product values('PR111','Lenevo 5Note',40,100,'S002','RE11');
+insert into R_Product values('PR112','Lenevo Phab',40,100,'S003','RE12');
+insert into R_Product values('PR113','Lenevo A8',40,100,'S004','RE13');
+insert into R_Product values('PR114','Lenevo K10',40,100,'S005','RE14');
+insert into R_Product values('PR115','IphoneS7 Plus',40,100,'S006','RE15');
+insert into R_Product values('PR116','IphoneS6 Plus',40,100,'S007','RE16');
+insert into R_Product values('PR117','IphoneS4',21,100,'S008','RE17');
+insert into R_Product values('PR118','IphoneS5',22,100,'S009','RE18');
+insert into R_Product values('PR119','IphoneS6',23,100,'S001','RE19');
+insert into R_Product values('PR120','IphoneS7',24,100,'S002','RE20');
+insert into R_Product values('PR121','Zara Women Frocks',25,100,'S003','RE21');
+insert into R_Product values('PR122','Zara Sweat Shirts',26,100,'S004','RE22');
+insert into R_Product values('PR123','Zara Trousers',27,100,'S005','RE23');
+insert into R_Product values('PR124','Zara Tshirt',28,	100,'S006','RE24');
+insert into R_Product values('PR125','Zara Hood Shirt',29,100,'S007','RE25');
+insert into R_Product values('PR126','Gucci Sweat Shirt',30,100,'S008','RE26');
+insert into R_Product values('PR127','Gucci Shirts',31,100,'S009','RE27');
+insert into R_Product values('PR128','Gucci Women Frocks',32,100,'S001','RE28');
+insert into R_Product values('PR129','Gucci Women Shirts',33,100,'S002','RE29');
+insert into R_Product values('PR130','Gucci Men Tshirt',34,100,'S003','RE30');
+insert into R_Product values('PR131','Gucci Women Tshirt',35,100,'S004','RE31');
+insert into R_Product values('PR132','Lacoste Women Tshirt',22,100,'S005','RE32');
+insert into R_Product values('PR133','Lacoste Mens Tshirt',22,100,'S006','RE33');
+insert into R_Product values('PR134','Lacoste Shorts',22,100,'S007','RE34');
+insert into R_Product values('PR135','Lacoste Shirts',17,100,'S008','RE35');
+insert into R_Product values('PR136','Addidas Formal Shoes',18,100,'S009','RE36');
+insert into R_Product values('PR137','Addidas sneakers',19,100,'S001','RE37');
+insert into R_Product values('PR138','Nike Formal Shoes',20,100,'S002','RE38');
+insert into R_Product values('PR139','Nike Sports Shoes',21,100,'S003','RE39');
+insert into R_Product values('PR140','Star Sneakers',12,100,'S004','RE40');
+
+CREATE INDEX IX_Relationship1 ON R_Product (Group_ID);
+CREATE INDEX IX_Relationship2 ON R_Product (Supplier_ID);
+CREATE INDEX IX_Relationship3 ON R_Product (Review_ID);
+
+CREATE TABLE  R_Supplier 
+(
+   Supplier_ID  Varchar(10) PRIMARY KEY NOT NULL,
+   Supplier_Name  Varchar(20) NOT NULL,
+   Supply_Quantity  Int NOT NULL
+);
+select * from R_Supplier;
+
+
+insert into R_Supplier values('S001','Zara',200);
+insert into R_Supplier values('S002','Gucci',300);
+insert into R_Supplier values('S003','Lacoste',250);
+insert into R_Supplier values('S004','Nike',200);
+insert into R_Supplier values('S005','Addidas',300);
+insert into R_Supplier values('S006','Star',250);
+insert into R_Supplier values('S007','Apple',150);
+insert into R_Supplier values('S008','Lenevo',200);
+insert into R_Supplier values('S009','Hp',100);
+
+CREATE TABLE R_Payment  
+(
+    Payment_ID   Varchar(10) PRIMARY KEY NOT NULL,
+    Payment_Mode   Varchar(20) NOT NULL,
+    Card_Type   Varchar(20) NOT NULL,
+    Card_Number   Int NOT NULL,
+    CVV   Int NOT NULL,
+    Name_On_Card   Varchar(20) NOT NULL,
+    Customer_ID   Varchar(10) NOT NULL,
+    Visit_Number   Int NOT NULL,
+    Employee_ID Varchar(10)
+);
+
+
+ALTER TABLE R_Payment  ADD CONSTRAINT P_CD FOREIGN KEY (Customer_ID) REFERENCES R_Customer (Customer_ID);
+Alter TABLE R_Payment  ADD CONSTRAINT  P_ED foreign key (Employee_ID) references R_Employee(Employee_ID);
+select * from R_Payment;
+
+insert into R_Payment values('P10','online','credit',2637231147,259,'Tom',10001,1,'E100');
+insert into R_Payment values('P11','online','debit',2314090152,628,'Robert',10002,1,'E101');
+insert into R_Payment values('P12','online','debit',3160466116,750,'Sandra',10002,2,'E102');
+insert into R_Payment values('P13','online','debit',1924770950,643,'Meyer',10002,3,'E103');
+insert into R_Payment values('P14','online','debit',2605710031,348,'Laura',10002,4,'E104');
+insert into R_Payment values('P15','online','debit',1760861438,372,'Paul',10002,5,'E105');
+insert into R_Payment values('P16','online','debit',2486382462,821,'Stephen',10002,6,'E106');
+insert into R_Payment values('P17','online','debit',2026172246,573,'Richard',10002,7,'E107');
+insert into R_Payment values('P18','online','debit',1652325458,664,'Danie',10002,8,'E108');
+insert into R_Payment values('P19','online','debit',1593155579,527,'Danie',10003,1,'E109');
+insert into R_Payment values('P20','online','debit',3600749836,366,'Danie',10003,2,'E111');
+insert into R_Payment values('P21','online','debit',1629603244,331,'Danie',10003,3,'E112');
+insert into R_Payment values('P22','online','credit',2196257042,497,'Danie',10003,4,'E113');
+insert into R_Payment values('P23','online','credit',3176037606,699,'Danie',10003,5,'E114');
+insert into R_Payment values('P24','online','credit',4227850650,867,'Danie',10003,6,'E115');
+insert into R_Payment values('P25','online','credit',1922366282,870,'Danie',10005,1,'E116');
+insert into R_Payment values('P26','online','credit',4290419995,890,'Danie',10006,1,'E117');
+insert into R_Payment values('P27','online','credit',1831996471,268,'Paul',10006,2,'E118');
+insert into R_Payment values('P28','online','credit',2394100413,417,'Paul',10006,3,'E119');
+insert into R_Payment values('P29','online','credit',1127802595,488,'Paul',10006,4,'E120');
+insert into R_Payment values('P30','online','credit',3211572399,599,'Paul',10006,5,'E121');
+insert into R_Payment values('P31','online','credit',3754477702,376,'Paul',10007,1,'E122');
+insert into R_Payment values('P32','online','credit',4332207305,283,'Paul',10007,2,'E123');
+insert into R_Payment values('P33','online','credit',1370698763,642,'Paul',10007,3,'E124');
+insert into R_Payment values('P34','online','credit',3046243391,150,'Paul',10007,4,'E125');
+insert into R_Payment values('P35','online','debit',2145277261,644,'Paul',10007,5,'E126');
+insert into R_Payment values('P36','online','debit',1427358687,815,'Paul',10007,6,'E127');
+/*insert into R_Payment values('P37','online','debit',3879003240,704,'Paul',10007,7,'E128');
+--insert into R_Payment values('P38','online','debit',1494504380,518,'Mike',10007,8,'E129');
+--insert into R_Payment values('P39','online','debit',1513724846,471,'Mike',10007,9,'E130');
+--insert into R_Payment values('P40','online','debit',1150749080,659,'Mike',10007,10,'E131');
+insert into R_Payment values('P41','online','debit',2021084797,490,'Mike',10008,1,'E132');
+insert into R_Payment values('P42','online','debit',2583687271,846,'Mike',10008,2,'E133');
+insert into R_Payment values('P43','online','debit',2643425696,265,'Mike',10008,3,'E134');
+insert into R_Payment values('P44','direct','debit',1627922960,258,'Mike',10009,1,'E135');
+insert into R_Payment values('P45','direct','debit',3349298033,660,'Mike',10009,2,'E136');
+insert into R_Payment values('P46','direct','debit',2556226002,517,'Mike',10009,3,'E137');
+insert into R_Payment values('P47','direct','debit',2122858396,441,'Mike',10009,4,'E138');
+insert into R_Payment values('P48','direct','debit',4327209833,326,'Mike',10009,5,'E139');
+insert into R_Payment values('P49','direct','credit',3216903325,487,'Mike',10009,6,'E140');
+insert into R_Payment values('P50','direct','credit',1819229414,813,'Mike',10009,7,'E141');
+insert into R_Payment values('P51','direct','credit',2751033800,882,'Mike',10009,8,'E142');
+insert into R_Payment values('P52','direct','credit',1641183774,308,'Mike',10009,9,'E143');
+insert into R_Payment values('P53','direct','credit',1194550010,350,'Mike',10010,1,'E144');
+insert into R_Payment values('P54','direct','credit',1408194222,377,'Esteller',10010,2,'E145');
+insert into R_Payment values('P55','direct','credit',1342371996,318,'Esteller',10010,3,'E146');
+insert into R_Payment values('P56','direct','credit',3259865998,562,'Esteller',10010,4,'E147');
+insert into R_Payment values('P57','direct','credit',4198907218,691,'Esteller',10010,5,'E148');
+insert into R_Payment values('P58','direct','credit',1253548883,134,'Esteller',10011,1,'E148');
+insert into R_Payment values('P59','direct','credit',2769503830,288,'Esteller',10012,1,'E149');
+insert into R_Payment values('P60','direct','credit',4111052432,774,'Esteller',10013,1,'E150');
+insert into R_Payment values('P61','direct','credit',2733430220,310,'Esteller',10014,1,'E151');
+insert into R_Payment values('P62','direct','credit',1481583127,206,'Esteller',10015,1,'E152');
+insert into R_Payment values('P63','direct','credit',1754015666,590,'Esteller',10016,1,'E153');
+insert into R_Payment values('P64','direct','credit',4327697062,143,'Esteller',10017,1,'E154');
+insert into R_Payment values('P65','direct','credit',2776996454,445,'Esteller',10018,1,'E155');
+insert into R_Payment values('P66','direct','credit',1508118285,102,'Esteller',10019,1,'E156');
+insert into R_Payment values('P67','direct','credit',3613558356,618,'Sandra',10020,1,'E157');
+insert into R_Payment values('P68','direct','credit',1377075209,387,'Sandra',20000,1,'E158');
+insert into R_Payment values('P69','direct','credit',1775034267,308,'Sandra',20001,1,'E159');
+insert into R_Payment values('P70','direct','credit',1086781067,817,'Sandra',20002,1,'E160');
+insert into R_Payment values('P71','direct','credit',4289402597,398,'Sandra',20003,1,'E161');
+insert into R_Payment values('P72','direct','credit',1867595319,166,'Sandra',20004,1,'E162');
+insert into R_Payment values('P73','direct','credit',2153326098,334,'Sandra',20005,1,'E163');
+insert into R_Payment values('P74','direct','credit',2287425122,767,'Sandra',20006,1,'E164');
+insert into R_Payment values('P75','direct','credit',3153569739,796,'Sandra',20007,1,'E165');
+insert into R_Payment values('P76','direct','credit',2907204337,378,'Sandra',20008,1,'E166');
+insert into R_Payment values('P77','direct','credit',3379971129,610,'Adam',20009,1,'E167');
+insert into R_Payment values('P78','direct','credit',3559421590,516,'Adam',20010,1,'E168');
+insert into R_Payment values('P79','direct','credit',4068575013,848,'Adam',20011,1,'E169');
+insert into R_Payment values('P80','direct','credit',1461189748,684,'Adam',20012,1,'E170');
+insert into R_Payment values('P81','direct','credit',1603218647,441,'Adam',20013,1,'E171');
+insert into R_Payment values('P82','direct','credit',3698423753,448,'Adam',20014,1,'E172');
+insert into R_Payment values('P83','direct','credit',4352973259,652,'Adam',20015,1,'E173');
+insert into R_Payment values('P84','direct','credit',2060023961,848,'Adam',20016,1,'E174');
+insert into R_Payment values('P85','direct','credit',1490287836,319,'Robert',20017,1,'E175');
+insert into R_Payment values('P86','direct','credit',1528160762,455,'Robert',20018,1,'E176');
+insert into R_Payment values('P87','direct','credit',2465051294,269,'Robert',20019,1,'E177');
+insert into R_Payment values('P88','direct','credit',1725024863,837,'Robert',20020,1,'E178');
+insert into R_Payment values('P89','direct','credit',2740985596,114,'Robert',30000,1,'E179');
+insert into R_Payment values('P90','direct','credit',4209354840,880,'Robert',30001,1,'E180');
+insert into R_Payment values('P91','direct','credit',1903101101,552,'Robert',30002,1,'E181');
+insert into R_Payment values('P92','direct','credit',1022378637,861,'Robert',30003,1,'E182');
+insert into R_Payment values('P93','direct','credit',3940621897,596,'Robert',30004,1,'E183');
+insert into R_Payment values('P94','direct','credit',1793626701,885,'Robert',30005,1,'E184');
+insert into R_Payment values('P95','direct','credit',1936844809,677,'Robert',30006,1,'E185');
+insert into R_Payment values('P96','direct','credit',1121240227,433,'Robert',30007,1,'E186');
+insert into R_Payment values('P97','direct','credit',4160078849,842,'Robert',30008,1,'E187');*/
+
+CREATE INDEX IX_Relationship11 ON R_Payment(Customer_ID);
+
+CREATE TABLE   R_Voucher  
+(
+    Voucher_ID   Varchar(10) Primary key NOT NULL,
+    Discountper   Int NOT NULL
+);
+
+select * from R_Voucher;
+
+insert into R_Voucher values('V1',10);
+insert into R_Voucher values('V2',20);
+insert into R_Voucher values('V3',30);
+insert into R_Voucher values('V4',40);
+insert into R_Voucher values('V5',50);
+
+CREATE TABLE  R_Bill 
+(
+   Billing_ID  Varchar(10) Primary key NOT NULL,
+   Billing_Date  Date NOT NULL,
+   Amount_Paid  Int NOT NULL,
+   Voucher_ID  Varchar(10),
+   Payment_ID  Varchar(10) NOT NULL,
+   Order_ID  Varchar(10) NOT NULL
+);
+
+ALTER TABLE  R_Bill  ADD CONSTRAINT  B_VD  FOREIGN KEY ( Voucher_ID ) REFERENCES  R_Voucher  ( Voucher_ID );
+ALTER TABLE R_Bill    ADD CONSTRAINT    B_PD   FOREIGN KEY (   Payment_ID   ) REFERENCES    R_Payment    (   Payment_ID   );
+ALTER TABLE R_Bill  ADD CONSTRAINT  B_OD  FOREIGN KEY ( Order_ID ) REFERENCES  R_Orders  ( Order_ID );
+
+alter table R_Bill
+drop constraint B_OD;
+
+select * from R_Bill;
+insert into R_Bill values('B1000','01/feb/2016','2000','V1','P10','0100');
+	insert into R_Bill values('B1001','01/jan/2016','2000','V1','P11','0101');
+	insert into R_Bill values('B1002','02/mar/2016','2000','V1','P12','0102');
+	insert into R_Bill values('B1003','12/may/2016','2000','V1','P13','0103');
+	insert into R_Bill values('B1004','04/may/2016','1700','V1','P14','0104');
+	insert into R_Bill values('B1005','03/nov/2016','1700','V1','P15','0105');
+	insert into R_Bill values('B1006','12/may/2016','1700','V1','P16','0106');
+	insert into R_Bill values('B1007','15/nov/2016','1700','V1','P17','0107');
+	insert into R_Bill values('B1008','14/aug/2016','1600','V1','P18','0108');
+	insert into R_Bill values('B1009','11/oct/2016','1600','V1','P19','0109');
+	insert into R_Bill values('B1010','07/jul/2016','1600','V1','P20','0110');
+	insert into R_Bill values('B1011','12/feb/2016','1600','V1','P21','0111');
+	insert into R_Bill values('B1012','05/sep/2016','1600','V1','P22','0112');
+	insert into R_Bill values('B1013','08/sep/2016','1600','V1','P23','0113');
+	insert into R_Bill values('B1014','01/oct/2016','1500','V1','P24','0114');
+	insert into R_Bill values('B1015','05/aug/2016','1500','V1','P25','0115');
+	insert into R_Bill values('B1016','07/sep/2016','1500','V1','P26','0116');
+	insert into R_Bill values('B1017','11/dec/2016','1500','V1','P27','0117');
+	insert into R_Bill values('B1018','20/oct/2016','1500','V1','P28','0118');
+	insert into R_Bill values('B1019','25/jun/2016','1500','V1','P29','0119');
+	insert into R_Bill values('B1020','24/jun/2016','1500','V1','P30','0120');
+	insert into R_Bill values('B1021','19/aug/2016','1200','V1','P31','0121');
+	insert into R_Bill values('B1022','20/jul/2016','1200','V1','P32','0122');
+	insert into R_Bill values('B1023','16/dec/2016','1200','V1','P33','0123');
+	insert into R_Bill values('B1024','12/oct/2016','1200','V1','P34','0124');
+	insert into R_Bill values('B1025','11/nov/2016','1200','V1','P35','0125');
+	insert into R_Bill values('B1026','16/jun/2016','1200','V1','P36','0126');
+	insert into R_Bill values('B1027','20/feb/2016','1000','V1','P10','0127');
+	insert into R_Bill values('B1028','21/aug/2016','1000','V1','P11','0128');
+	insert into R_Bill values('B1029','30/jan/2016','1000','V1','P12','0129');
+	insert into R_Bill values('B1030','15/oct/2016','1000','V1','P13','0130');
+	insert into R_Bill values('B1031','11/sep/2016','1000','V1','P14','0131');
+	insert into R_Bill values('B1032','18/sep/2016','1000','V1','P15','0132');
+	insert into R_Bill values('B1033','27/feb/2016','1000','V1','P16','0133');
+	insert into R_Bill values('B1034','28/sep/2016','1000','V1','P17','0134');
+	insert into R_Bill values('B1035','09/aug/2016','1000','V1','P18','0135');
+	insert into R_Bill values('B1036','11/oct/2016','1000','V1','P19','0136');
+	insert into R_Bill values('B1037','15/nov/2016','1000','V1','P10','0137');
+	insert into R_Bill values('B1038','11/oct/2016','1000','V1','P11','0138');
+	insert into R_Bill values('B1039','12/feb/2016','1000','V1','P12','0139');
+	insert into R_Bill values('B1040','01/mar/2016','1000','V1','P13','0140');
+        
+	/*insert into R_Bill values('B1041','09/aug/2016','1000','V3','P51','0141');
+	insert into R_Bill values('B1042','10/dec/2016','1000','V3','P52','0142');
+	insert into R_Bill values('B1043','01/feb/2016','900','V3','P53','0143');
+	insert into R_Bill values('B1044','06/dec/2016','900','V3','P54','0144');
+	insert into R_Bill values('B1045','09/dec/2016','900','V3','P55','0145');
+	insert into R_Bill values('B1046','07/sep/2016','600','V2','P56','0146');
+	insert into R_Bill values('B1047','27/oct/2016','600','V2','P57','0147');
+	insert into R_Bill values('B1048','28/dec/2016','600','V2','P58','0148');
+	insert into R_Bill values('B1049','29/may/2016','600','V2','P59','0149');
+	insert into R_Bill values('B1050','10/aug/2016','600','V2','P60','0150');
+	insert into R_Bill values('B1051','14/nov/2016','600','V2','P61','0151');
+	insert into R_Bill values('B1052','12/dec/2016','600','V2','P62','0152');
+	insert into R_Bill values('B1053','07/aug/2016','600','V2','P63','0153');
+	insert into R_Bill values('B1054','08/may/2016','600','V2','P64','0154');
+	insert into R_Bill values('B1055','10/oct/2016','400','V2','P65','0155');
+	insert into R_Bill values('B1056','17/oct/2016','400','V2','P66','0156');
+	insert into R_Bill values('B1057','22/aug/2016','400','V2','P67','0157');
+	insert into R_Bill values('B1058','20/oct/2016','400','V2','P68','0158');
+	insert into R_Bill values('B1059','10/oct/2016','400','V2','P69','0159');
+	insert into R_Bill values('B1060','01/jul/2016','300','V1','P70','0160');
+	insert into R_Bill values('B1061','02/oct/2016','300','V1','P71','0161');
+	insert into R_Bill values('B1062','05/oct/2016','300','V1','P72','0162');
+	insert into R_Bill values('B1063','08/oct/2016','300','V1','P73','0163');
+	insert into R_Bill values('B1064','29/oct/2016','300','V1','P74','0164');
+	insert into R_Bill values('B1065','16/apr/2016','200','V1','P75','0165');
+	insert into R_Bill values('B1066','19/jun/2016','200','V1','P76','0166');
+	insert into R_Bill values('B1067','14/jun/2016','200','V1','P77','0167');
+	insert into R_Bill values('B1068','17/mar/2016','200','V1','P78','0168');
+	insert into R_Bill values('B1069','02/jun/2016','200','V1','P79','0169');
+	insert into R_Bill values('B1070','10/feb/2016','200','V1','P80','0170');
+	insert into R_Bill values('B1071','25/oct/2016','200','V1','P81','0171');
+	insert into R_Bill values('B1072','20/oct/2016','200','V1','P82','0172');
+	insert into R_Bill values('B1073','18/sep/2016','100','V1','P83','0173');
+	insert into R_Bill values('B1074','20/oct/2016','100','V1','P84','0174');
+	insert into R_Bill values('B1075','11/mar/2016','100','V1','P85','0175');
+	insert into R_Bill values('B1076','12/feb/2016','100','V1','P86','0176');
+	insert into R_Bill values('B1077','08/jun/2016','100','V1','P87','0177');
+	insert into R_Bill values('B1078','22/jun/2016','100','V1','P88','0178');
+	insert into R_Bill values('B1079','28/oct/2016','100','V1','P89','0179');
+	insert into R_Bill values('B1080','27/oct/2016','50','V1','P90','0180');
+	insert into R_Bill values('B1081','14/oct/2016','50','V1','P91','0181');
+	insert into R_Bill values('B1082','16/jul/2016','50','V1','P92','0182');
+	insert into R_Bill values('B1083','17/sep/2016','50','V1','P93','0183');
+	insert into R_Bill values('B1084','20/apr/2016','50','V1','P94','0184');
+	insert into R_Bill values('B1085','14/sep/2016','50','V1','P95','0185');
+	insert into R_Bill values('B1086','19/jun/2016','50','V1','P96','0186');
+	-----insert into R_Bill values('B1087','25/feb/2016','50','V1','P97','0187');*/
+
+CREATE INDEX    IX_Relationship4    ON    R_Bill    (   Voucher_ID   );
+CREATE INDEX     IX_Relationship9     ON     R_Bill     (    Payment_ID    );
+CREATE INDEX     IX_Relationship16     ON     R_Bill     (    Order_ID    );
+
+CREATE TABLE   R_Address  
+(
+Address_ID   Varchar(10) Primary key NOT NULL,
+Apartment_Number   Int NOT NULL,
+Street   Varchar(20) NOT NULL,
+Apartment_Name   Varchar(20) NOT NULL,
+Customer_ID   Varchar(10) NOT NULL,
+Zipcode_ID Varchar(10) NOT NULL
+);
+select * from R_Address;
+ALTER TABLE  R_Address  ADD CONSTRAINT ADD_CD  FOREIGN KEY ( Customer_ID ) REFERENCES  R_Customer  ( Customer_ID );
+ALTER TABLE  R_Address  ADD CONSTRAINT ZC_CD  FOREIGN KEY ( Zipcode_ID ) REFERENCES  R_Zipcode  ( Zipcode_ID );
+
+insert into R_Address values('CA100',14,'Tetlow','Emerald',10001,11000);
+insert into R_Address values('CA101',13,'Palace Road','Emerald',10002,11001);
+insert into R_Address values('CA102',18,'New England','Emerald',10003,11002);
+insert into R_Address values('CA103',12,'Brookline','Emerald',10004,11003);
+insert into R_Address values('CA104',12,'Heath Street','Emerald',10005,11004);
+insert into R_Address values('CA105',20,'Cambridge Road','Emerald',10006,11005);
+insert into R_Address values('CA106',19,'North West Avenue','Emerald',10007,11006);
+insert into R_Address values('CA107',11,'South West Ave','Westglow',10008,11007);
+insert into R_Address values('CA108',17,'Huntington Ave','Westglow',10009,11008);
+insert into R_Address values('CA109',16,'Indiana Street','Westglow',10010,11009);
+insert into R_Address values('CA110',11,'Park Main','Westglow',10011,22001);
+insert into R_Address values('CA111',20,'Riddle Street','Westglow',10012,22002);
+insert into R_Address values('CA112',13,'Charles Street','Westglow',10013,22003);
+insert into R_Address values('CA113',10,'Hill Side','Gurnet',10014,22004);
+insert into R_Address values('CA114',19,'Clarks Hill','Gurnet',10015,22005);
+insert into R_Address values('CA115',14,'Mission Main','Gurnet',10016,22006);
+insert into R_Address values('CA116',10,'Hay Market','Gurnet',10017,33000);
+insert into R_Address values('CA117',19,'Masson Road','Gurnet',10018,33001);
+insert into R_Address values('CA118',20,'New Burn','Gurnet',10019,33002);
+insert into R_Address values('CA119',16,'Oak Ter','Gurnet',10020,33003);
+insert into R_Address values('CA120',10,'Oak Ter','Gurnet',20000,33004);
+insert into R_Address values('CA121',19,'Oak Ter','Oak Burn',20001,33005);
+insert into R_Address values('CA122',11,'Oak Ter','Oak Burn',20002,44000);
+insert into R_Address values('CA123',19,'Oak Ter','Oak Burn',20003,44001);
+insert into R_Address values('CA124',11,'Oak Ter','Oak Burn',20004,44002);
+insert into R_Address values('CA125',17,'Oak Ter','Oak Burn',20005,44003);
+insert into R_Address values('CA126',13,'Oak Ter','Oak Burn',20006,55001);
+insert into R_Address values('CA127',14,'Clarks Hill','Oak Burn',20007,55002);
+
+insert into R_Address values('CA128',10,'Clarks Hill','Mariposa',20008,55003);
+insert into R_Address values('CA129',13,'Clarks Hill','Mariposa',20009,11000);
+insert into R_Address values('CA130',17,'Clarks Hill','Mariposa',20010,11001);
+insert into R_Address values('CA131',20,'Clarks Hill','Mariposa',20011,11002);
+insert into R_Address values('CA132',19,'Clarks Hill','Mariposa',30000,11003);
+insert into R_Address values('CA133',10,'Clarks Hill','Mariposa',30001,11004);
+insert into R_Address values('CA134',11,'Clarks Hill','Mariposa',30002,11005);
+insert into R_Address values('CA135',18,'Clarks Hill','Mariposa',30003,11006);
+insert into R_Address values('CA136',12,'Clarks Hill','Mariposa',30004,11007);
+insert into R_Address values('CA137',16,'Charles Street','Mariposa',30006,11008);
+insert into R_Address values('CA138',12,'Charles Street','Mariposa',30007,11009);
+insert into R_Address values('CA139',10,'Charles Street','Harvester',30007,22000);
+
+/*insert into R_Address values('CA140',19,'Charles Street','Harvester',20020,44001);
+insert into R_Address values('CA141',14,'Charles Street','Harvester',30000,11001);
+insert into R_Address values('CA142',17,'Charles Street','Harvester',30001,11002);
+insert into R_Address values('CA143',10,'Charles Street','Harvester',30002,11003);
+insert into R_Address values('CA144',16,'North West Avenue','Marcy',30003,11004);
+insert into R_Address values('CA145',11,'North West Avenue','Marcy',30004,11005);
+insert into R_Address values('CA146',16,'North West Avenue','Marcy',30005,11006);
+insert into R_Address values('CA147',16,'North West Avenue','Marcy',30006,11007);
+insert into R_Address values('CA148',13,'North West Avenue','Marcy',30007,11008);
+insert into R_Address values('CA149',12,'North West Avenue','Marcy',30008,11009);*/
+
+CREATE INDEX   IX_Relationship5   ON   R_Address(Customer_ID);
+
+CREATE TABLE  R_ProductGroup   
+(
+     Group_ID   Varchar(10) Primary key NOT NULL,
+     Group_Name    Varchar(20) NOT NULL
+);
+select * from R_ProductGroup;
+
+drop table R_ProductGroup;
+insert into R_ProductGroup values(100,'Electronics');
+insert into R_ProductGroup values(200,'Clothing');
+insert into R_ProductGroup values(300,'Shoes');
+
+CREATE TABLE  R_OrderProducts 
+(
+   Quantity  Int,
+   Product_ID  Varchar(10) NOT NULL,
+   Order_ID  Varchar(10) NOT NULL,
+OrderProduct_ID Varchar(10) Primary key
+);
+
+ALTER TABLE R_OrderProducts ADD CONSTRAINT OP_PD FOREIGN KEY (Product_ID) REFERENCES R_Product(Product_ID);
+ALTER TABLE  R_OrderProducts  ADD CONSTRAINT  OP_OD  FOREIGN KEY ( Order_ID ) REFERENCES  R_Orders  ( Order_ID );
+alter table R_OrderProducts
+drop constraint OP_OD;
+select * from R_OrderProducts;
+desc R_OrderProducts;
+
+
+        insert into R_OrderProducts values('2','PR101','0100','0P01')
+	insert into R_OrderProducts values('1','PR101','0101','0P02');
+	insert into R_OrderProducts values('4','PR101','0102','0P03');
+	insert into R_OrderProducts values('1','PR104','0103','0P04');
+	insert into R_OrderProducts values('1','PR105','0104','0P05');
+	insert into R_OrderProducts values('1','PR106','0105','0P06');
+	insert into R_OrderProducts values('1','PR106','0106','0P07');
+	insert into R_OrderProducts values('4','PR106','0107','0P08');
+	insert into R_OrderProducts values('3','PR106','0108','0P09');
+	insert into R_OrderProducts values('5','PR106','0109','0P10');
+	insert into R_OrderProducts values('6','PR106','0110','0P11');
+	insert into R_OrderProducts values('3','PR112','0111','0P12');
+	insert into R_OrderProducts values('5','PR113','0112','0P13');
+	insert into R_OrderProducts values('3','PR114','0113','0P14');
+	insert into R_OrderProducts values('2','PR115','0114','0P15');
+	insert into R_OrderProducts values('2','PR116','0115','0P16');
+	insert into R_OrderProducts values('2','PR117','0116','0P17');
+	insert into R_OrderProducts values('2','PR118','0117','0P18');
+	insert into R_OrderProducts values('1','PR119','0118','0P19');
+	insert into R_OrderProducts values('4','PR120','0119','0P20');
+	insert into R_OrderProducts values('4','PR120','0120','0P21');
+	insert into R_OrderProducts values('4','PR120','0121','0P22');
+	insert into R_OrderProducts values('4','PR120','0122','0P23');
+	insert into R_OrderProducts values('4','PR124','0123','0P24');
+	insert into R_OrderProducts values('3','PR125','0124','0P25');
+	insert into R_OrderProducts values('3','PR126','0125','0P26');
+	insert into R_OrderProducts values('3','PR127','0126','0P27');
+	insert into R_OrderProducts values('3','PR128','0127','0P28');
+	insert into R_OrderProducts values('3','PR129','0128','0P29');
+	insert into R_OrderProducts values('5','PR130','0129','0P30');
+	insert into R_OrderProducts values('5','PR131','0130','0P31');
+	insert into R_OrderProducts values('5','PR132','0131','0P32');
+	insert into R_OrderProducts values('5','PR133','0132','0P33');
+	insert into R_OrderProducts values('5','PR134','0133','0P34');
+	insert into R_OrderProducts values('7','PR135','0134','0P35');
+	insert into R_OrderProducts values('5','PR136','0135','0P36');
+	insert into R_OrderProducts values('2','PR137','0136','0P37');
+	insert into R_OrderProducts values('2','PR138','0137','0P38');
+	insert into R_OrderProducts values('2','PR139','0138','0P39');
+	insert into R_OrderProducts values('2','PR140','0139','0P40');
+	insert into R_OrderProducts values('2','PR101','0140','0P41');
+	insert into R_OrderProducts values('2','PR101','0141','0P42');
+	insert into R_OrderProducts values('2','PR101','0142','0P43');
+	insert into R_OrderProducts values('2','PR101','0143','0P44');
+	insert into R_OrderProducts values('8','PR121','0144','0P45');
+	insert into R_OrderProducts values('4','PR121','0145','0P46');
+	insert into R_OrderProducts values('4','PR121','0146','0P47');
+	insert into R_OrderProducts values('4','PR121','0147','0P48');
+	insert into R_OrderProducts values('3','PR126','0148','0P49');
+	insert into R_OrderProducts values('3','PR127','0149','0P50');
+	insert into R_OrderProducts values('3','PR128','0150','0P51');
+	insert into R_OrderProducts values('6','PR109','0151','0P52');
+	insert into R_OrderProducts values('6','PR110','0152','0P53');
+	insert into R_OrderProducts values('6','PR111','0153','0P54');
+        
+	/*insert into R_OrderProducts values('6','PR018','0154','0P55');
+	insert into R_OrderProducts values('3','PR019','0155','0P56');
+	insert into R_OrderProducts values('3','PR020','0156','0P57');
+	insert into R_OrderProducts values('3','PR021','0157','0P58');
+	insert into R_OrderProducts values('2','PR022','0158','0P59');
+	insert into R_OrderProducts values('2','PR023','0159','0P60');
+	insert into R_OrderProducts values('2','PR024','0160','0P61');
+	insert into R_OrderProducts values('2','PR025','0161','0P62');
+	insert into R_OrderProducts values('2','PR026','0162','0P63');
+	insert into R_OrderProducts values('5','PR027','0163','0P64');
+	insert into R_OrderProducts values('5','PR028','0164','0P65');
+	insert into R_OrderProducts values('5','PR029','0165','0P66');
+	insert into R_OrderProducts values('8','PR030','0166','0P67');
+	insert into R_OrderProducts values('8','PR031','0167','0P68');
+	insert into R_OrderProducts values('8','PR032','0168','0P69');
+	insert into R_OrderProducts values('9','PR033','0169','0P70');
+	insert into R_OrderProducts values('9','PR034','0170','0P71');
+	insert into R_OrderProducts values('9','PR035','0171','0P72');
+	insert into R_OrderProducts values('9','PR036','0172','0P73');
+	insert into R_OrderProducts values('9','PR037','0173','0P74');
+	insert into R_OrderProducts values('9','PR038','0174','0P75');
+	insert into R_OrderProducts values('9','PR039','0175','0P76');
+	insert into R_OrderProducts values('9','PR040','0176','0P77');
+	insert into R_OrderProducts values('9','PR041','0177','0P78');
+	insert into R_OrderProducts values('9','PR042','0178','0P79');
+	insert into R_OrderProducts values('9','PR043','0179','0P80');
+	insert into R_OrderProducts values('9','PR044','0180','0P81');
+	insert into R_OrderProducts values('9','PR045','0181','0P82');
+	insert into R_OrderProducts values('9','PR046','0182','0P83');
+	insert into R_OrderProducts values('9','PR047','0183','0P84');
+	insert into R_OrderProducts values('9','PR048','0184','0P85');
+	insert into R_OrderProducts values('9','PR049','0185','0P86');
+	insert into R_OrderProducts values('12','PR014','0186','0P87');
+	insert into R_OrderProducts values('12','PR015','0187','0P88');
+	insert into R_OrderProducts values('1','PR016','0178','0P89');
+	insert into R_OrderProducts values('1','PR017','0178','0P90');
+	insert into R_OrderProducts values('1','PR018','0178','0P91');
+	insert into R_OrderProducts values('1','PR019','0178','0P92');
+	insert into R_OrderProducts values('1','PR020','0178','0P93');
+	insert into R_OrderProducts values('1','PR021','0178','0P94');
+	insert into R_OrderProducts values('1','PR022','0178','0P95');
+	insert into R_OrderProducts values('1','PR033','0181','0P96');
+	insert into R_OrderProducts values('1','PR034','0182','0P97');
+	insert into R_OrderProducts values('1','PR035','0183','0P98');
+	insert into R_OrderProducts values('1','PR036','0184','0P99');
+	insert into R_OrderProducts values('1','PR037','0185','0P100');
+	insert into R_OrderProducts values('1','PR038','0186','0P101');*/
+        
+        CREATE INDEX  IX_Relationship12  ON  R_OrderProducts  ( Product_ID );
+CREATE INDEX   IX_Relationship13   ON   R_OrderProducts   (  Order_ID  );
+
+ CREATE TABLE  R_ProductDetails 
+(
+   Product_ID  Varchar(10) Primary key NOT NULL,
+   Weight  Varchar(20),
+   Width  Float,
+   Height  Float,
+   Colour  Varchar(20)
+);
+desc R_ProductDetails ; 
+
+ALTER TABLE R_ProductDetails ADD CONSTRAINT Pay_PD FOREIGN KEY (Product_ID) REFERENCES R_Product(Product_ID);
+alter table R_ProductDetails
+drop constraint Pay_PD;
+
+insert into R_ProductDetails values('PR101',8,15,13,'White');
+insert into R_ProductDetails values('PR102',8,15,13,'White');
+insert into R_ProductDetails values('PR103',8,15,12,'Silver');
+insert into R_ProductDetails values('PR104',6,15,12,'Silver');
+insert into R_ProductDetails values('PR105',6,13,12,'Black');
+insert into R_ProductDetails values('PR106',6,13,12,'Black');
+insert into R_ProductDetails values('PR107',6,13,12,'Black');
+insert into R_ProductDetails values('PR108',4,11,12,'Silver');
+insert into R_ProductDetails values('PR109',4,11,12,'Silver');
+insert into R_ProductDetails values('PR110',4,11,12,'Silver');
+insert into R_ProductDetails values('PR111',4,10,10,'Silver');
+insert into R_ProductDetails values('PR112',3,1.8,6.8,'Silver');
+insert into R_ProductDetails values('PR113',3,1.8,6.8,'Black');
+insert into R_ProductDetails values('PR114',3,1.8,6.8,'Black');
+insert into R_ProductDetails values('PR115',3,1.8,6.8,'Black');
+insert into R_ProductDetails values('PR116',3,1.8,6.8,'Black');
+insert into R_ProductDetails values('PR117',3,1.8,6.8,'Black');
+insert into R_ProductDetails values('PR118',1,1.8,7.2,'Rose Gold');
+insert into R_ProductDetails values('PR119',1,1.8,7.2,'Rose Gold');
+insert into R_ProductDetails values('PR120',1,1.8,8,'Rose Gold');
+insert into R_ProductDetails values('PR121',2,1.8,8.73,'Black');
+insert into R_ProductDetails values('PR122',2,1.8,6.27,'Black');
+insert into R_ProductDetails values('PR123',2,1.8,6.27,'Black');
+insert into R_ProductDetails values('PR124',2,1.8,6.27,'Black');
+insert into R_ProductDetails values('PR125',2,1.8,6.27,'Black');
+insert into R_ProductDetails values('PR126',2,1.8,6.27,'Black');
+insert into R_ProductDetails values('PR127',2,1.8,6.27,'Black');
+insert into R_ProductDetails values('PR128',2,1.8,6.27,'Black');
+insert into R_ProductDetails values('PR129',1,1.8,6.27,'Black');
+insert into R_ProductDetails values('PR130',1,1.8,6.27,'Black');
+insert into R_ProductDetails values('PR131',1,1.8,6.27,'Black');
+insert into R_ProductDetails values('PR132',1,1.8,6.27,'White');
+insert into R_ProductDetails values('PR133',1,1.8,6.27,'Grey');
+insert into R_ProductDetails values('PR134',1,1.8,6.27,'Grey');
+insert into R_ProductDetails values('PR135',1,1,10,'Brown');
+insert into R_ProductDetails values('PR136',1,1,9,'Black');
+insert into R_ProductDetails values('PR137',2,1,8,'White');
+insert into R_ProductDetails values('PR138',2,1,7,'Brown');
+insert into R_ProductDetails values('PR139',1,1,6,'Black');
+insert into R_ProductDetails values('PR140',1,1,6,'Brown');
+
+CREATE TABLE  R_Reviews
+(
+Quality_Rating Int NOT NULL,
+Defectper  Int NOT NULL, 
+Review_ID  Varchar(10) Primary key NOT NULL,
+Review_Date  Date
+);
+select * from R_Reviews;
+desc R_Reviews;
+
+insert into R_Reviews values(7,10,'RE01','12/feb/2016');
+insert into R_Reviews values(7,10,'RE02','13/mar/2016');
+insert into R_Reviews values(7,10,'RE03','01/feb/2016');
+insert into R_Reviews values(7,10,'RE04','05/feb/2016');
+insert into R_Reviews values(7,10,'RE05','11/feb/2016');
+insert into R_Reviews values(7,10,'RE06','12/may/2016');
+insert into R_Reviews values(7,10,'RE07','01/apr/2016');
+insert into R_Reviews values(9,0,'RE08','15/may/2016');
+insert into R_Reviews values(9,0,'RE09','20/feb/2016');
+insert into R_Reviews values(9,0,'RE10','20/apr/2016');
+insert into R_Reviews values(9,0,'RE11','01/feb/2016');
+insert into R_Reviews values(9,0,'RE12','21/aug/2016');
+insert into R_Reviews values(9,0,'RE13','10/may/2016');
+insert into R_Reviews values(9,0,'RE14','25/sep/2016');
+insert into R_Reviews values(9,0,'RE15','13/apr/2016');
+insert into R_Reviews values(9,0,'RE16','16/jun/2016');
+insert into R_Reviews values(9,0,'RE17','22/sep/2016');
+insert into R_Reviews values(7,10,'RE18','22/jul/2016');
+insert into R_Reviews values(7,10,'RE19','30/nov/2016');
+insert into R_Reviews values(7,10,'RE20','25/sep/2016');
+insert into R_Reviews values(7,10,'RE21','28/jan/2016');
+insert into R_Reviews values(7,10,'RE22','17/jun/2016');
+insert into R_Reviews values(7,10,'RE23','20/sep/2016');
+insert into R_Reviews values(7,10,'RE24','18/aug/2016');
+insert into R_Reviews values(7,10,'RE25','22/feb/2016');
+insert into R_Reviews values(7,10,'RE26','23/oct/2016');
+insert into R_Reviews values(7,10,'RE27','17/nov/2016');
+insert into R_Reviews values(7,10,'RE28','29/oct/2016');
+insert into R_Reviews values(8,5,'RE29','24/may/2016');
+insert into R_Reviews values(8,5,'RE30','13/oct/2016');
+insert into R_Reviews values(8,5,'RE31','22/apr/2016');
+insert into R_Reviews values(8,5,'RE32','23/feb/2016');
+insert into R_Reviews values(8,4,'RE33','15/oct/2016');
+insert into R_Reviews values(8,4,'RE34','09/jun/2016');
+insert into R_Reviews values(9,0,'RE35','11/aug/2016');
+insert into R_Reviews values(9,0,'RE36','09/jun/2016');
+insert into R_Reviews values(5,20,'RE37','01/feb/2016');
+insert into R_Reviews values(4,30,'RE38','01/aug/2016');
+insert into R_Reviews values(9,0,'RE39','12/mar/2016');
+insert into R_Reviews values(9,0,'RE40','22/nov/2016');
+
+1. Find how many customers are there group by category
+select Customer_ID, count(Customer_Type) as category from R_Customer group by Customer_ID;
+
+2. 2.Find 2 appartments whose name is emerald or their id is 11003
+/*select count(Apartment_Name), count(Address_ID), Zipcode_ID from R_Address where (Apartment_Name='Emerald' or Zipcode_ID=11003) order by Zipcode_ID desc;
+
+select Apartment_Name,Address_ID, Zipcode_ID from R_Address where Apartment_Name='Emerald' or Zipcode_ID=11003 limit 2;
+
+select top 2 * from R_Address where Apartment_Name='Emerald' or Zipcode_ID=11003;-----error
+
+select Apartment_Name, Address_ID, Zipcode_ID from R_Address where (Apartment_Name='Emerald' or Zipcode_ID=11003) ;
+ 
+select Apartment_Name, Address_ID, Zipcode_ID from R_Address where (select count(Apartment_name) from R_Address Group by Apartment_name Having Count(Apartment_name)=2)Apartment_Name='Emerald' or Zipcode_ID=11003;
+
+select count(Apartment_Name),Apartment_Name from R_Address where Apartment_Name='Emerald' Group by Apartment_Name having count(Apartment_Name)=2;*/
+
+select * from (select * from R_Address where Apartment_Name='Emerald' or Zipcode_ID=11003) where ROWNUM<=2;
+
+
+3.Find the supplied product count and their group for each product
+SELECT
+  P.Product_Name,
+  COUNT(S.Supply_Quantity) AS supplied_product_count,
+  G.Group_Name
+FROM
+  R_Product P
+  JOIN R_Supplier S ON P.Supplier_ID = S.Supplier_ID
+  JOIN R_ProductGroup G ON P.Group_ID = G.Group_ID
+GROUP BY
+  P.Product_Name, G.Group_Name;
+
+
+4. Total number of orders to be shipped immediate and is partially Shipped
+  select count(Order_ID ),Status from R_Orders group by status;
+  
+5. List of products by department which has high defect%
+ select P.Product_Name, max(R.Defectper), count(Product_ID) from R_Product P join R_Reviews R 
+ ON P.Review_ID = R.Review_ID group by P.Product_Name ;
+ 
+ select P.Product_Name,R.Defectper from R_Product P join R_Reviews R 
+ ON P.Review_ID = R.Review_ID where R.Defectper >=30 ; 
+ 
+ 6.Total amount of revenue earned with respect to their purchasing modes
+ select P.Payment_Mode as total , P.Payment_ID, B.Amount_Paid from 
+ R_Payment P
+ join 
+ R_Bill B
+ ON  P.Payment_ID = B.Payment_ID where P.Payment_Mode= 'online';
+ 
+select count(P.Payment_Mode) as total , sum(B.Amount_Paid) as revenue from 
+ R_Payment P
+ join 
+ R_Bill B
+ ON  P.Payment_ID = B.Payment_ID where P.Payment_Mode in ('online','ofline');
+  
+ select count(P.Payment_Mode) as total , sum(B.Amount_Paid) as revenue from 
+ R_Payment P
+ join 
+ R_Bill B
+ ON  P.Payment_ID = B.Payment_ID group by P.Payment_Mode ;
+ 
+ 7.Find The quantity of products available whose status is in progress and shipment duration is immediate
+   select OP.Quantity, O.Status, O.Shippent_Duration,O.Order_ID
+   from
+   R_Orders O
+   join
+   R_OrderProducts OP
+   ON
+   O.Order_ID=OP.Order_ID
+   join
+   R_Product P ON OP.Product_ID  = P.Product_ID where Status = 'In Progress' and Shippent_Duration='Immediate';
+   
+   select * from R_Orders;
+   
+   
+   
+ 8.Find the names and defect% order by defect%   
+   select P.Product_Name,R.Defectper from
+   R_Product P
+   join
+   R_Reviews R
+   ON
+   P.Review_ID=R.Review_ID
+   order by R.Defectper desc;
+   select * from R_Product
+
+9.Find Customers payment ID,mode, vocher applied and their visist number
+select * from R_Customer;
+select * from R_Payment;
+select * from R_Voucher;
+select * from R_Bill;
+
+select P.Payment_ID,P.Payment_Mode,P.Visit_Number,B.Voucher_ID from
+R_payment P
+join
+R_Bill B
+ON
+P.Payment_ID=B.Payment_ID;
+
+10.Find product and their respective colour
+ select P.Product_ID,PD.Colour from R_Product P
+ join R_ProductDetails PD
+ ON 
+ P.Product_ID=PD.Product_ID order by PD.Colour;
+ 
+select P.Product_ID,PD.Colour from R_Product P
+ join R_ProductDetails PD
+ ON 
+ P.Product_ID=PD.Product_ID; 
+ 
+ 11.
+ Find the product Names their respective groups
+ select PG.Group_ID,P.Product_Name,PG.Group_Name
+ from R_Product P
+ join
+ R_ProductGroup PG
+ ON
+ PG.Group_ID=P.Group_ID;
+-------------------------------------------------------------------------------- 
+ Views
+ 
+ 1.Student as Customer View-- 
+ 
+ create view StudentCustomer as select * from R_Customer ;
+ 
+ 2.Product details with minimum defect% and high rating
+ create view LeastDefect_HighRating as
+ select min(R.Defectper),P.Product_Name,max(Quality_Rating)
+ from R_Product P
+ join
+ R_Reviews R
+ ON P.Review_ID=R.Review_ID;
+ 
+ 3.Products and the colours available
+ create view Productcolors as
+ select select P.Product_ID,PD.Colour from R_Product P
+ join R_ProductDetails PD
+ ON 
+ P.Product_ID=PD.Product_ID order by PD.Colour;
+ 
+ 4.Distinct employee departments whose salary is greater than 1200 limit to 4
+ create view Distintemployees as
+ select Distinct(department),Employee_Name,Designation,Salary from R_Employee
+ where Salary <1200;
+ /*select Distinct(department),Employee_Name,Designation,Salary from R_Employee
+ where Salary >1200;*/
+ 
+ 5.Create view TotalAmount as Total amount of revenue earned with respect to their purchasing modes
+create view TotalAmount as
+select select P.Payment_Mode as total , P.Payment_ID, B.Amount_Paid from 
+ R_Payment P
+ join 
+ R_Bill B
+ ON  P.Payment_ID = B.Payment_ID where P.Payment_Mode= 'online';
+ 
+ 
+ 6.View Salary of employee group by type and department
+ create view Salary as
+ select Employee_Type,Employee_ID,Employee_Name,department,Salary
+ from R_Employee group by department;
+------------------------------------------------------------------
+
+----stored procedure---
+
+set serverouput on;
+
+1.Store procedure to add new Customer---
+
+  create or replace  procedure add_customer1
+  (
+  FIRST_NAME R_customer.FIRST_NAME%TYPE,
+ LAST_NAME R_customer.LAST_NAME%TYPE,
+ PHONE_NUMBER R_customer.PHONE_NUMBER%TYPE,
+ EMAIL_ADDRESS R_customer.EMAIL_ADDRESS%TYPE,
+ CUSTOMER_TYPE R_customer.CUSTOMER_TYPE%TYPE)
+ AS NEW_CUSTOMER_ID VARCHAR2(5);
+ BEGIN 
+ SELECT MAX(customer_ID) + 1 into NEW_CUSTOMER_ID FROM R_customer;
+ INSERT INTO R_customer VALUES('NEW_CUSTOMER_ID','PASHU','SONAWANE',9856231470,'PASHUSONAWANE@GMAIL.COM','BUSINESS');
+ DBMS_OUTPUT.PUT_LINE('NEW CUSTOMER ADDED SUCCESFULLY:' ||'NEW_CUSTOMER_ID');
+ END; 
+ 
+
+2.Stored procedure to find most deffective product from each product group
+call GetMostDeffective_Product()
+
+Create or replace Procedure GetMostDeffective_Product()
+Begin
+SELECT P.Product_ID,P.Product_Name, MAX(R.'Defectper`) As `Defect%`, PG.Group_Name
+from
+    R_Reviews R
+      join 
+    R_Product P
+        on 
+        R.Review_ID=P.Review_ID
+      join 
+    PG.R_ProductGroup 
+        on P.Group_ID=PG.Group_ID
+ Group by PG.Group_Name;
+ end;
+
+--3
+--Stored procedure for employee assesment
+call GetEmployee_Assesment ()---
+
+call GetEmployee_Assesment ()
+
+create or replace procedure  GetEmployee_Assesment()
+Begin
+Select count(C.Customer_ID) as Total_Customers ,C.Employee_ID,E.Designation,E.Salary
+from  R_Customer C
+Inner Join
+R_Employee E
+on
+E.Employee_ID=C.Employee_ID 
+group by Employee_ID
+order by count(C.Customer_ID);
+end;
+
+--3
+--Stored procedure to find customer details of highest Amount_Paid
+call findMaxBill()
+
+Create Procedure findMaxBill() 
+Begin
+	select Max(B.Amount_Paid) As GreatestPurchase, C.Customer_ID,C.First_Name from R_Bill B
+        inner join 
+    R_Payment P
+        on  P.Payment_ID=B.Payment_ID
+        inner join 
+    R_Customer C
+        on P.Customer_ID=C.Customer_ID;
+end;
+
+-------Trigger----
+--Find Customer name and updated time on customers table 
+/*create table 
+UpdateCustomerDetails
+(Customer_id int, First_Name varchar(20), update_time Datetime)*/
+
+ 
+ 
+create trigger UpdateCustomerDetails_trigger
+after update on customer
+for each row
+begin
+declare new_date datetime;
+set new_date=now();
+
+insert into UpdateCustomerDetails(Customer_id,First_Name,update_time)
+values(old.Customer_ID,old.First_Name, new_date);
+
+end \\
+
+--when customers details are updated the trigger is set
+update customer set Email_Address='naynaa@gmail.com'
+where Customer_ID=10000
+
+--updates can be seen in the newly created table
+select * from UpdateCustomerDetails
+
+
+
+
+
+ 
+ 
+
